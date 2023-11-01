@@ -4,10 +4,11 @@ STOP_WORDS = [
     'will', 'with'
 ]
 
-
 def print_word_freq(file):
     """Read in `file` and print out the frequency of words in that file."""
-    pass
+    with open(file, 'r') as reader:
+        open_doc = reader.read()
+        print(open_doc)
 
 
 if __name__ == "__main__":
