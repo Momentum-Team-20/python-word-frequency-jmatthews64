@@ -14,6 +14,17 @@ def remove_stop_words(list):
             no_stop_words.append(word)
     return no_stop_words
 
+# meant to add white space to front of string to make it same as longest string
+#def add_white_space(list):
+ #   longest_word = max(list, key=len)
+  #  format_length = len(longest_word)
+   # white_space_list = []
+    #print(format_length)
+    #for each in list:
+     #   while len(each) < format_length:
+      #      list = " " + each
+       #     print(list)
+
 
 def print_word_freq(file):
     """Read in `file` and print out the frequency of words in that file."""
@@ -27,6 +38,7 @@ def print_word_freq(file):
     # split the open_doc into a list of lower case strings for each word
     new_list = open_doc.lower().split()
     new_clean_list = remove_stop_words(new_list)
+   #add_white_space(new_clean_list)   
     # initialize a dictionary and fill it from words in new_list
     word_count_dict = {}
     for word in new_clean_list:
