@@ -21,9 +21,13 @@ def print_word_freq(file):
     print(new_list)
     word_count_dict = {}
     for word in new_list:
-        if word != word_count_dict.keys():
-            print(word)
-    
+        if word in word_count_dict.keys():
+            word_count_dict[word] = word_count_dict[word] + 1
+            print(word_count_dict)
+        else:
+            word_count_dict[word] = 1
+    print(word_count_dict, " out of if")
+    print(word_count_dict.keys())
 
 if __name__ == "__main__":
     import argparse
