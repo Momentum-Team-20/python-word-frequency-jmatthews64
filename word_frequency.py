@@ -34,8 +34,10 @@ def print_word_freq(file):
             word_count_dict[word] += 1
         else:
             word_count_dict[word] = 1
-    print(word_count_dict, " out of if")
-    
+    # format printed output
+    for each in word_count_dict:
+        print(each, " | ", word_count_dict[each])
+
 
 if __name__ == "__main__":
     import argparse
