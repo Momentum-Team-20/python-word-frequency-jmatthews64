@@ -18,16 +18,14 @@ def print_word_freq(file):
             open_doc = open_doc.replace(character, "")
     #split the open_doc into a list of lower case strings for each word
     new_list = open_doc.lower().split()
-    print(new_list)
+    #initialize a dictionary and fill it from words in new_list
     word_count_dict = {}
     for word in new_list:
         if word in word_count_dict.keys():
-            word_count_dict[word] = word_count_dict[word] + 1
-            print(word_count_dict)
+            word_count_dict[word] += 1
         else:
             word_count_dict[word] = 1
     print(word_count_dict, " out of if")
-    print(word_count_dict.keys())
 
 if __name__ == "__main__":
     import argparse
