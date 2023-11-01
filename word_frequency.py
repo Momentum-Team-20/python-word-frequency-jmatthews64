@@ -1,10 +1,11 @@
+import string
+
 STOP_WORDS = [
     'a', 'an', 'and', 'are', 'as', 'at', 'be', 'by', 'for', 'from', 'has', 'he',
     'i', 'in', 'is', 'it', 'its', 'of', 'on', 'that', 'the', 'to', 'were',
     'will', 'with'
 ]
 
-import string
 
 def remove_stop_words(list):
     no_stop_words = []
@@ -13,19 +14,20 @@ def remove_stop_words(list):
             no_stop_words.append(word)
     return no_stop_words
 
+
 def print_word_freq(file):
     """Read in `file` and print out the frequency of words in that file."""
-    #open the file to be read, read it, and assign to open_doc
+    # open the file to be read, read it, and assign to open_doc
     with open(file, 'r') as reader:
         open_doc = reader.read()
-    #remove puntion from string before breaking it to a list
+    # remove puntion from string before breaking it to a list
     for character in open_doc:
         if character in string.punctuation:
             open_doc = open_doc.replace(character, "")
-    #split the open_doc into a list of lower case strings for each word
+    # split the open_doc into a list of lower case strings for each word
     new_list = open_doc.lower().split()
     new_clean_list = remove_stop_words(new_list)
-    #initialize a dictionary and fill it from words in new_list
+    # initialize a dictionary and fill it from words in new_list
     word_count_dict = {}
     for word in new_clean_list:
         if word in word_count_dict.keys():
@@ -33,6 +35,7 @@ def print_word_freq(file):
         else:
             word_count_dict[word] = 1
     print(word_count_dict, " out of if")
+    
 
 if __name__ == "__main__":
     import argparse
